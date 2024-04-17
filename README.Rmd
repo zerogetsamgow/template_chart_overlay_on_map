@@ -16,7 +16,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of template_chart_overlay_on_map is to make available an easy to use template for plotting charts over a map base.
+The goal of template_chart_overlay_on_map is to make available an easy to use template for plotting charts over a map base. 
+
+Code for the template is in `~R\template_bar_on_aus.R`. This code produces the following map showing population column charts for each State and Territory in Australia.
+
+Population data is sourced using `readabs`, the shapefiles come from `strayr` as does the paletter for the charts.
 
 
 ```{r include = FALSE}
@@ -27,7 +31,6 @@ library(readabs)
 #' We will use `strayr::state_name_au` and `strayr::state_abb_au` as factor levels
 #' We will colour our bar charts using the `strayr::palette_state_name_2016` palette
 library(strayr)
-
 
 # Get ABS population data
 population.tbl =
@@ -140,7 +143,7 @@ map.with.grobs =
 
 ```
 
-```{r plot_map}
+```{r plot_map, echo = FALSE}
 plot(map.with.grobs)
 ```
 
